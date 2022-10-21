@@ -1,0 +1,69 @@
+<section class="chartBtns">
+    <button class="frequencyBtn">Workout Frequency</button>
+    <button class="setButton">Exercise Frequency</button>
+    <button class="analysisBtn">Exercise Analysis</button>
+</section>
+<section class="setContainer">
+    <b>Select Exercises</b>
+    <section class="setCheckboxes">
+        {{!-- add exercise buttons here --}}
+    </section>
+    <section class="setChartContainer">
+        <h5>Sample</h5>
+        <canvas id="setChartSample"></canvas>
+    </section>
+</section>
+
+<section class="workoutFrequency">
+    <form class="setDates">
+        {{!-- set dates here--}}
+        <label for="startDate">Start Date:</label>
+        <input type="date" class='startDate' name="startDate" min="2018-01-01" required>
+        <br>
+        <label for="endDate">End Date:&nbsp;</label>
+        <input type="date" class='endDate' name="endDate" min="2018-01-01" required>
+        <br>
+        <button style="position:relative; right:80px; left:5px; top:1px" class="setDate" type="submit">Set Dates</button>
+    </form>
+    <section class="freqChartContainer">
+    </section>
+</section>
+
+<section class="analysisContainer">
+    <form class="analysisForm">
+        <label for="startDateA" class="startDt">Start Date:</label>
+        <input type="date" class='startDateA' name="startDateA" min="2018-01-01" required>
+        <br>
+        <label for="endDateA" class="endDt">End Date:&nbsp;</label>
+        <input type="date" class='endDateA' name="endDateA" min="2018-01-01" required>
+        <br>
+        <b>Select Exercises</b>
+        <section class="analysisCheckboxes">
+            {{!-- add exercise buttons here --}}
+        </section>
+        <br>
+        <label for="type" class="chooseAna">Choose analysis type:</label>
+        <select name="type" id="typeAnalysis" class="dropdown" required>
+            <option value="total">Total Volume</option>
+            <option value="max">Max Weight</option>
+        </select>
+        <br>
+        <div style="position:relative; right:300px; left:300px; top:-27px;">
+            
+            <button class="anaylzeBtn" type="submit">Analyze</button>
+        </div>
+
+    </form>
+    <section class="analysisChartContainer">
+        <h5>Sample</h5>
+        <canvas id="analysisChartSample"></canvas>
+    </section>
+</section>
+
+
+{{#if logged_in}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./assets/js/helper.js"></script>
+<script src="./assets/js/chart.js"></script>
+{{/if}}
